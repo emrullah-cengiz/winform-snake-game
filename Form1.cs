@@ -61,7 +61,7 @@ namespace Snake
                 firstBox.FlatAppearance.BorderColor = Color.Black;
             }
 
-            var boxes = this.Controls.Cast<Control>().Where(x => x.GetType().Name.Equals("SnakeBox")).ToList();
+            var boxes = GetSnakeBoxes();
 
             //creating second and third box 
             if (timeCounter == 0 || timeCounter == 2)
@@ -116,12 +116,28 @@ namespace Snake
             return nextPos;
         }
 
+
+        private List<Control> GetSnakeBoxes()
+        {
+            return this.Controls.Cast<Control>().Where(x => x.GetType().Name.Equals("SnakeBox")).ToList();
+        }
+
         private void ReSpawnFood()
         {
+            var snakeBoxes = GetSnakeBoxes();
+            Point pos = new Point(-100, -100);
             Random rnd = new Random();
-            Point pos = new Point(rnd.Next(0, this.Width), rnd.Next(0, this.Height));
-            pos.X = pos.X - (pos.X % boxWidth);
-            pos.Y = pos.Y - (pos.Y % boxWidth);
+
+            do
+            {
+                pos.X = rnd.Next(0, this.Width);
+                pos.Y = rnd.Next(0, this.Height);
+
+                pos.X -= pos.X % boxWidth;
+                pos.Y -= pos.Y % boxWidth;
+
+            } while (snakeBoxes.FirstOrDefault(x => x.Location == pos) != null);
+
 
             food.Location = pos;
         }

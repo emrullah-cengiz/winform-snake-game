@@ -1,4 +1,4 @@
-﻿namespace CinemaWF
+﻿namespace Snake
 {
     partial class Form1
     {
@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.snakeBox2 = new CinemaWF.Models.SnakeBox();
-            this.snakeBox1 = new CinemaWF.Models.SnakeBox();
+            this.snakeBox2 = new Snake.Models.SnakeBox();
+            this.snakeBox1 = new Snake.Models.SnakeBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 

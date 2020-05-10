@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CinemaWF.Properties
+namespace Snake.Properties
 {
 
 

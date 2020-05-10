@@ -1,4 +1,4 @@
-﻿using CinemaWF.Models;
+﻿using Snake.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CinemaWF
+namespace Snake
 {
     public partial class Form1 : Form
     {
